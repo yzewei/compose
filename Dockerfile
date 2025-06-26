@@ -31,7 +31,7 @@ RUN set -ex; \
     cd /opt/compose/dist; \
     mv docker-compose docker-compose-linux-$(uname -m); \
     sha256sum docker-compose-linux-loongarch64 > /tmp/checksums.txt; \
-    cat /tmp/checksums.txt | while read sum file; do echo "$sum *$file" > ${file#\*}.sha256; done
+    cat /tmp/checksums.txt | while read sum file; do echo "$sum *$file" > checksums.txt; done
 
 FROM ghcr.io/loong64/debian:trixie-slim
 
